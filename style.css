@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
 
 :root{
-    --bg-color:#f30909 ;
-    --primary-color:#000000 ;
-    --secundary-color:#eceaeb ;a
+    --bg-color:#000000 ;
+    --primary-color:#ffffff ;
+    --secundary-color:#0400ff ;a
     --tipo-fonte: "Edu AU VIC WA NT Dots", cursive;
 }
 body{
