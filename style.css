@@ -1,47 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
 
-:root{
-    --bg-color:#000000 ;
-    --primary-color:#ffffff ;
-    --secundary-color:#0400ff ;a
+:root {
+    --bg-color: #000000;
+    --primary-color: #ffffff;
+    --secondary-color: #0400ff; /* Corrigido o nome da variável */
     --tipo-fonte: "Edu AU VIC WA NT Dots", cursive;
 }
-body{
+
+body {
     background-color: var(--bg-color);
-    color:var(--primary-color);
+    color: var(--primary-color);
     font-family: var(--tipo-fonte);
-    height: 100vh; /*altura em porcentagem do body*/
-    margin:0;
+    height: 100vh;
+    margin: 0;
 }
-header{
-background-color: var(--primary-color);
-text-align: center;
-padding: 1px;/*espaço interno do header*/
+
+header {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 1px;
 }
-h1{
-font-size: 2rem;
-color: var(--bg-color);
-font-weight: 700; /*weight define o negrito*/
+
+h1 {
+    font-size: 2rem;
+    color: var(--bg-color);
+    font-weight: 700;
 }
-nav{
-    display: flex; /*área flexível navegável*/
+
+nav {
+    display: flex;
     justify-content: center;
     font-weight: 400;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     color: var(--bg-color);
-    margin: 0 2rem 1rem 0rem;
-
+    margin: 0 2rem 1rem 0;
     font-size: 1.2rem;
 }
-nav a:hover{
+
+nav a:hover {
     text-decoration: underline;
     transform: scale(0.90);
     transition: transform 0.1s;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,10 +65,10 @@ footer{
     font-size: 1.3rem;
     text-align: center;
     padding: 2rem;
-    border: var(--secundary-color) solid 2px;
+    border: 2px solid var(--secondary-color);
 }
 
 span {
     font-weight: bold;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
 }
