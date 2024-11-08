@@ -56,4 +56,4 @@ async function quantidadeUsuariosPorRede() {
     Plotly.newPlot(grafico, data, layout);
 }
 
-quantidadeUsuariosPorRede();
+quantidadeUsuarios();
