@@ -1,16 +1,16 @@
 import { getCSS, tickConfig } from "./common.js"
 
-async function quantidadeUsuarios() {
-    const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/esportes/esportes-dados-globais.json';
+async function quantidadeDeJogadores() {
+    const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/esportes/esportes-mais-praticados.json';
     const res = await fetch(url)
     const dados = await res.json()
-    const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados)
+    const modalidadeEsportiva = Object.keys(dados)
+    const quantidadeDeJogadores = Object.values(dados)
 
     const data = [
         {
-            x: nomeDasRedes,
-            y: quantidadeDeUsuarios,
+            x: modalidadeEsportiva,
+            y: quantidadeDeJogadores,
             type: 'bar',
             marker: {
                 color: getCSS('--primary-color')
@@ -22,7 +22,7 @@ async function quantidadeUsuarios() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Redes sociais com mais usuários',
+            text: 'Esportes com mais praticantes',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -33,7 +33,7 @@ async function quantidadeUsuarios() {
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'Nome das redes',
+                text: 'Nome dos Esportes',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,7 +42,7 @@ async function quantidadeUsuarios() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'Bilhões de usuários ativos',
+                text: 'Bilhões de jogadores ativos',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -55,4 +55,4 @@ async function quantidadeUsuarios() {
     document.getElementById('graficos-container').appendChild(grafico)
     Plotly.newPlot(grafico, data, layout)
 }
-quantidadeUsuarios();
+quantidadeDeJogadores();
