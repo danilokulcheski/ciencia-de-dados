@@ -1,11 +1,11 @@
-import { getCSS, tickConfig } from "./common.js"
+import { getCSS, tickConfig } from "./common.js";
 
-async function quantidadeUsuarios() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json&#39&#39';
-    const res = await fetch(url)
-    const dados = await res.json()
-    const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados)
+async function quantidadeUsuariosPorRede() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json';
+    const res = await fetch(url);
+    const dados = await res.json();
+    const nomeDasRedes = Object.keys(dados);
+    const quantidadeDeUsuarios = Object.values(dados);
 
     const data = [
         {
@@ -16,7 +16,7 @@ async function quantidadeUsuarios() {
                 color: getCSS('--primary-color')
             }
         }
-    ]
+    ];
 
     const layout = {
         plot_bgcolor: getCSS('--bg-color'),
@@ -27,7 +27,7 @@ async function quantidadeUsuarios() {
             font: {
                 color: getCSS('--primary-color'),
                 size: 30,
-                font: getCSS('--font')
+                family: getCSS('--font')
             }
         },
         xaxis: {
@@ -48,11 +48,12 @@ async function quantidadeUsuarios() {
                 }
             }
         }
-    }
+    };
 
-    const grafico = document.createElement('div')
-    grafico.className = 'grafico'
-    document.getElementById('graficos-container').appendChild(grafico)
-    Plotly.newPlot(grafico, data, layout)
+    const grafico = document.createElement('div');
+    grafico.className = 'grafico';
+    document.getElementById('graficos-container').appendChild(grafico);
+    Plotly.newPlot(grafico, data, layout);
 }
-quantidadeUsuarios();
+
+quantidadeUsuariosPorRede();
